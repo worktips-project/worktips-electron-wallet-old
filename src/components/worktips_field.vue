@@ -1,5 +1,5 @@
 <template>
-<div class="loki-field" :class="{disable, 'disable-hover': disableHover}">
+<div class="worktips-field" :class="{disable, 'disable-hover': disableHover}">
     <div class="label row items-center" v-if="label" :disabled="disable">
         {{ label }}
         <span v-if="optional" class="optional">({{ $t("fieldLabels.optional") }})</span>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-    name: "LokiField",
+    name: "WorktipsField",
     props: {
         label: {
             type: String,
@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style lang="scss">
-.loki-field {
+.worktips-field {
     .label {
         margin: 6px 0;
         font-weight: bold;

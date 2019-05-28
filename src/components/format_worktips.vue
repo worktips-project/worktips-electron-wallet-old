@@ -1,12 +1,12 @@
 <template>
 <span>
-    {{ value }} LOKI
+    {{ value }} WORKTIPS
 </span>
 </template>
 
 <script>
 export default {
-    name: "FormatLoki",
+    name: "FormatWorktips",
     props: {
         amount: {
             required: true

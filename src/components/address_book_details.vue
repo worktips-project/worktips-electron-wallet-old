@@ -16,7 +16,7 @@
 
         </q-toolbar>
         <div class="address-book-modal q-mx-md">
-            <LokiField :label="$t('fieldLabels.address')" :error="$v.newEntry.address.$error">
+            <WorktipsField :label="$t('fieldLabels.address')" :error="$v.newEntry.address.$error">
                 <q-input
                     v-model="newEntry.address"
                     :placeholder="address_placeholder"
@@ -31,15 +31,15 @@
                     class="star-entry"
                     dark
                     />
-            </LokiField>
-            <LokiField :label="$t('fieldLabels.name')">
+            </WorktipsField>
+            <WorktipsField :label="$t('fieldLabels.name')">
                 <q-input
                     v-model="newEntry.name"
                     :dark="theme=='dark'"
                     hide-underline
                     />
-            </LokiField>
-            <LokiField :label="$t('fieldLabels.paymentId')" :error="$v.newEntry.payment_id.$error" optional>
+            </WorktipsField>
+            <WorktipsField :label="$t('fieldLabels.paymentId')" :error="$v.newEntry.payment_id.$error" optional>
                 <q-input
                     v-model="newEntry.payment_id"
                     :placeholder="$t('placeholders.hexCharacters', { count: '16 or 64' })"
@@ -47,8 +47,8 @@
                     :dark="theme=='dark'"
                     hide-underline
                     />
-            </LokiField>
-            <LokiField :label="$t('fieldLabels.notes')" optional>
+            </WorktipsField>
+            <WorktipsField :label="$t('fieldLabels.notes')" optional>
                 <q-input
                     v-model="newEntry.description"
                     :placeholder="$t('placeholders.additionalNotes')"
@@ -56,7 +56,7 @@
                     :dark="theme=='dark'"
                     hide-underline
                     />
-            </LokiField>
+            </WorktipsField>
 
             <q-field v-if="mode=='edit'">
                 <q-btn class="float-right" color="red" @click="deleteEntry()" :label="$t('buttons.delete')" />
@@ -115,7 +115,7 @@ import { mapState } from "vuex"
 import Identicon from "components/identicon"
 import AddressHeader from "components/address_header"
 import TxList from "components/tx_list"
-import LokiField from "components/worktips_field"
+import WorktipsField from "components/worktips_field"
 import { payment_id, address } from "src/validators/common"
 import { required } from "vuelidate/lib/validators"
 export default {
@@ -231,7 +231,7 @@ export default {
         AddressHeader,
         Identicon,
         TxList,
-        LokiField
+        WorktipsField
     }
 }
 </script>
@@ -240,7 +240,7 @@ export default {
 .address-book-details {
 
     .address-book-modal {
-        > .loki-field {
+        > .worktips-field {
             margin-top: 16px;
         }
 

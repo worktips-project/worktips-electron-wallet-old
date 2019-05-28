@@ -1,16 +1,16 @@
 <template>
 <div class="service-node-staking">
     <div class="q-pa-md">
-        <LokiField :label="$t('fieldLabels.serviceNodeKey')" :error="$v.service_node.key.$error">
+        <WorktipsField :label="$t('fieldLabels.serviceNodeKey')" :error="$v.service_node.key.$error">
             <q-input v-model="service_node.key"
                 :dark="theme=='dark'"
                 @blur="$v.service_node.key.$touch"
                 :placeholder="$t('placeholders.hexCharacters', { count: 64 })"
                 hide-underline
             />
-        </LokiField>
+        </WorktipsField>
 
-        <LokiField :label="$t('fieldLabels.amount')" class="q-mt-md" :error="$v.service_node.amount.$error">
+        <WorktipsField :label="$t('fieldLabels.amount')" class="q-mt-md" :error="$v.service_node.amount.$error">
             <q-input v-model="service_node.amount"
                 :dark="theme=='dark'"
                 type="number"
@@ -23,7 +23,7 @@
             <q-btn color="secondary" @click="service_node.amount = unlocked_balance / 1e8" :text-color="theme=='dark'?'white':'dark'">
                 {{ $t("buttons.all") }}
             </q-btn>
-        </LokiField>
+        </WorktipsField>
 
 
 
@@ -50,7 +50,7 @@ const objectAssignDeep = require("object-assign-deep");
 import { mapState } from "vuex"
 import { required, decimal } from "vuelidate/lib/validators"
 import { payment_id, service_node_key, greater_than_zero, address } from "src/validators/common"
-import LokiField from "components/worktips_field"
+import WorktipsField from "components/worktips_field"
 import WalletPassword from "src/mixins/wallet_password"
 import { i18n } from "plugins/i18n"
 
@@ -239,7 +239,7 @@ export default {
     },
     mixins: [WalletPassword],
     components: {
-        LokiField
+        WorktipsField
     }
 }
 </script>

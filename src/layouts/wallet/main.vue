@@ -75,7 +75,7 @@ const { clipboard } = require("electron")
 import { openURL } from "quasar"
 import { mapState } from "vuex"
 import WalletDetails from "components/wallet_details"
-import FormatLoki from "components/format_worktips"
+import FormatWorktips from "components/format_worktips"
 import StatusFooter from "components/footer"
 import MainMenu from "components/mainmenu"
 export default {

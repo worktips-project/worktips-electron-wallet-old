@@ -6,21 +6,21 @@
             {{ $t("titles.transactions") }}
         </div>
 
-        <LokiField class="col-5 q-px-sm" :label="$t('fieldLabels.filterTxId')">
+        <WorktipsField class="col-5 q-px-sm" :label="$t('fieldLabels.filterTxId')">
             <q-input v-model="tx_txid"
                      :dark="theme=='dark'"
                      :placeholder="$t('placeholders.enterAnId')"
                      hide-underline
                      />
-        </LokiField>
+        </WorktipsField>
 
-        <LokiField class="col-2" :label="$t('fieldLabels.filterTransactionType')">
+        <WorktipsField class="col-2" :label="$t('fieldLabels.filterTransactionType')">
             <q-select :dark="theme=='dark'"
                       v-model="tx_type"
                       :options="tx_type_options"
                       hide-underline
                       />
-        </LokiField>
+        </WorktipsField>
 
     </div>
     <TxList :type="tx_type" :txid="tx_txid" />
@@ -30,7 +30,7 @@
 <script>
 import { mapState } from "vuex"
 import TxList from "components/tx_list"
-import LokiField from "components/worktips_field"
+import WorktipsField from "components/worktips_field"
 export default {
     data () {
         return {
@@ -56,7 +56,7 @@ export default {
     }),
     components: {
         TxList,
-        LokiField
+        WorktipsField
     }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
 <q-page class="create-wallet">
     <div class="fields q-mx-md q-mt-md">
-        <LokiField :label="$t('fieldLabels.walletName')" :error="$v.wallet.name.$error">
+        <WorktipsField :label="$t('fieldLabels.walletName')" :error="$v.wallet.name.$error">
             <q-input
                 v-model="wallet.name"
                 @blur="$v.wallet.name.$touch"
@@ -9,18 +9,18 @@
                 :placeholder="$t('placeholders.walletName')"
                 hide-underline
             />
-        </LokiField>
+        </WorktipsField>
 
-        <LokiField :label="$t('fieldLabels.seedLanguage')">
+        <WorktipsField :label="$t('fieldLabels.seedLanguage')">
             <q-select
                 v-model="wallet.language"
                 :options="languageOptions"
                 :dark="theme=='dark'"
                 hide-underline
             />
-        </LokiField>
+        </WorktipsField>
 
-        <LokiField :label="$t('fieldLabels.password')" optional>
+        <WorktipsField :label="$t('fieldLabels.password')" optional>
             <q-input
                 v-model="wallet.password"
                 type="password"
@@ -28,16 +28,16 @@
                 :placeholder="$t('placeholders.walletPassword')"
                 hide-underline
             />
-        </LokiField>
+        </WorktipsField>
 
-        <LokiField :label="$t('fieldLabels.confirmPassword')">
+        <WorktipsField :label="$t('fieldLabels.confirmPassword')">
             <q-input
                 v-model="wallet.password_confirm"
                 type="password"
                 :dark="theme=='dark'"
                 hide-underline
             />
-        </LokiField>
+        </WorktipsField>
 
         <q-field>
             <q-btn color="primary" @click="create" :label="$t('buttons.createWallet')" />
@@ -50,7 +50,7 @@
 <script>
 import { required } from "vuelidate/lib/validators"
 import { mapState } from "vuex"
-import LokiField from "components/worktips_field"
+import WorktipsField from "components/worktips_field"
 export default {
     data () {
         return {
@@ -164,7 +164,7 @@ export default {
         }
     },
     components: {
-        LokiField
+        WorktipsField
     }
 }
 </script>

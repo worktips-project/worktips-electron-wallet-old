@@ -5,7 +5,7 @@
             <b place="registerCommand">register_service_node</b>
             <b place="prepareCommand">prepare_registration</b>
         </i18n>
-        <LokiField :label="$t('fieldLabels.serviceNodeCommand')" :error="$v.registration_string.$error" :disabled="registration_status.sending">
+        <WorktipsField :label="$t('fieldLabels.serviceNodeCommand')" :error="$v.registration_string.$error" :disabled="registration_status.sending">
             <q-input
                 v-model="registration_string"
                 type="textarea"
@@ -15,7 +15,7 @@
                 :disabled="registration_status.sending"
                 hide-underline
             />
-        </LokiField>
+        </WorktipsField>
         <q-field class="q-pt-sm">
             <q-btn color="primary" @click="register()" :label="$t('buttons.registerServiceNode')" :disabled="registration_status.sending"/>
         </q-field>
@@ -31,7 +31,7 @@
 const objectAssignDeep = require("object-assign-deep");
 import { mapState } from "vuex"
 import { required } from "vuelidate/lib/validators"
-import LokiField from "components/worktips_field"
+import WorktipsField from "components/worktips_field"
 import WalletPassword from "src/mixins/wallet_password"
 
 export default {
@@ -112,7 +112,7 @@ export default {
     },
     mixins: [WalletPassword],
     components: {
-        LokiField
+        WorktipsField
     }
 }
 </script>

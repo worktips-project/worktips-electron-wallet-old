@@ -11,7 +11,7 @@
                    @click="cancel()" />
         </template>
 
-        <q-toolbar-title v-if="page_title=='Loki'">
+        <q-toolbar-title v-if="page_title=='Worktips'">
             <div class="flex items-center justify-center" style="margin-top:7px">
                 <img src="statics/worktips.svg" height="32">
             </div>
@@ -66,7 +66,7 @@ export default {
 
                 default:
                 case "wallet-select":
-                    return "Loki"
+                    return "Worktips"
             }
         }
     },

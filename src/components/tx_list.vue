@@ -7,15 +7,15 @@
 
     <template v-else>
         <q-infinite-scroll :handler="loadMore" ref="scroller">
-            <q-list link no-border :dark="theme=='dark'" class="loki-list tx-list">
-                <q-item class="loki-list-item transaction" v-for="(tx, index) in tx_list_paged" :key="`${tx.txid}-${tx.type}`"
+            <q-list link no-border :dark="theme=='dark'" class="worktips-list tx-list">
+                <q-item class="worktips-list-item transaction" v-for="(tx, index) in tx_list_paged" :key="`${tx.txid}-${tx.type}`"
                         @click.native="details(tx)" :class="'tx-'+tx.type">
                     <q-item-side class="type">
                         <div>{{ tx.type | typeToString }}</div>
                     </q-item-side>
                     <q-item-main class="main">
                         <q-item-tile class="amount" label>
-                            <FormatLoki :amount="tx.amount" />
+                            <FormatWorktips :amount="tx.amount" />
                         </q-item-tile>
                         <q-item-tile sublabel>{{ tx.txid }}</q-item-tile>
                     </q-item-main>
@@ -63,7 +63,7 @@ import { QSpinnerDots } from "quasar"
 import Identicon from "components/identicon"
 import TxTypeIcon from "components/tx_type_icon"
 import TxDetails from "components/tx_details"
-import FormatLoki from "components/format_worktips"
+import FormatWorktips from "components/format_worktips"
 import { i18n } from "plugins/i18n"
 
 export default {
@@ -282,14 +282,14 @@ export default {
         Identicon,
         TxTypeIcon,
         TxDetails,
-        FormatLoki
+        FormatWorktips
     }
 }
 </script>
 
 <style lang="scss">
 .tx-list {
-    .loki-list-item {
+    .worktips-list-item {
         padding-top: 0;
         padding-bottom: 0;
     }
