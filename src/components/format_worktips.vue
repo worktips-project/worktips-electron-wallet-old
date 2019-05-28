@@ -1,6 +1,6 @@
 <template>
 <span>
-    {{ value }} WORKTIPS
+    {{ value }} WTIP
 </span>
 </template>
 
