@@ -1,7 +1,7 @@
 {
   "name": "worktips-electron-wallet",
-  "version": "2.0.0",
-  "daemonVersion": "2.0.0",
+  "version": "2.0.1",
+  "daemonVersion": "2.1.4",
   "description": "Modern GUI interface for Worktips Currency",
   "productName": "Worktips Electron Wallet",
   "cordovaId": "com.worktipsnetwork.wallet",
