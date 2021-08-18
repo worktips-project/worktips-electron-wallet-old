@@ -15,7 +15,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.18.0",
     "electron-is-dev": "^1.0.1",
     "electron-window-state": "^5.0.3",
     "flag-icon-css": "^3.3.0",
